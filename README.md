@@ -53,6 +53,12 @@ aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$ gatk --java-options "
 aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$   
 aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$ gatk --java-options "-Xmx2G" SelectVariants -R hg38/hg38.fa -V TCGA_HF_SNP.vcf -sn TCGA-BH-A1F0-11B --exclude-filtered true --exclude-non-variants true -L chr17 -O TCGA-BH-A1F0-11B_SNP.vcf 2> sel_HF_SNP_11B.log &   
 ```   
+>Confira os arquivos gerados e explore os *.log*:   
+>TCGA-BH-A1F0-01A_SNP.vcf   
+>TCGA-BH-A1F0-01A_SNP.vcf.idx   
+>TCGA-BH-A1F0-11B_SNP.vcf   
+>TCGA-BH-A1F0-11B_SNP.vcf.idx    
+
 **FILTRO DE INDELs PARA CADA AMOSTRA:**   
 ```bash   
 aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$ gatk --java-options "-Xmx2G" SelectVariants -R hg38/hg38.fa -V TCGA_HF_INDEL.vcf -sn TCGA-BH-A1F0-01A --exclude-filtered true  --exclude-non-variants true -L chr17 -O TCGA-BH-A1F0-01A_INDEL.vcf 2> sel_HF_INDEL_01A.log &   
@@ -60,12 +66,32 @@ aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$
 aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$ gatk --java-options "-Xmx2G" SelectVariants -R hg38/hg38.fa -V TCGA_HF_INDEL.vcf -sn TCGA-BH-A1F0-11B --exclude-filtered true  --exclude-non-variants true -L chr17 -O TCGA-BH-A1F0-11B_INDEL.vcf 2> sel_HF_INDEL_11B.log &   
 ```   
 
+Confira também os arquivos gerados.   
+
+### PASSO 4: ANOTAÇÃO DOS VCFs  
+Neste passo, utilizamos a versão online do programa [Annovar](http://annovar.openbioinformatics.org/en/latest/) para adicionar informações genômicas, funcionais e populacionais às variantes identificadas. O [wANNOVAR](http://wannovar.wglab.org/) é uma ferramenta que incorporou as funcionalidades do software ANNOVAR (Perl script que rodamos via linha de comando), mas de fácil acesso e eficiente para anotar diferentes formatos de arquivos, inclusive VCFs.   
+
+> 1. No Canvas, baixe os 4 arquivos VCFs filtrados (baixam na pasta de Downloads/ local) para upload no wANNOVAR.   
+> 2. No **wANNOVAR**, registre-se e prossiga com o passo-a-passo para anotar.   
+> 3. Confira as mensagens de email, o wANNOVAR enviará link para o resultado da análise.   
+> 4. Explore as anotações. Discussão dos resultados.   
+
+Analisando as INDELs da amostra TCGA-BH-A1F0-11B (tecido mamárico normal), uma variante chama a atenção.   
+Trata-se de uma mutação no gene [*BRCA1*](https://www.ncbi.nlm.nih.gov/gene?cmd=Retrieve&dopt=Graphics&list_uids=672).   
+
+Explore [UCSC Browser](http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr17%3A43044295%2D43125483&hgsid=777953357_4rOF7a8emnEulAF6PagHfdQXXeDn) para visuallizar o contexto genômico do gene (distribuição de exons/introns), a densidade de SNPs reportados no gene, etc.  
+
+Tente explorar também um outro anotador de variantes do genomic browser [Ensenbl](https://www.ensembl.org/index.html), a versão "web interface" do *Variant Effect Predictor* ([VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)). Clique **Launch VE!P** e insira por copy/paste as informações da mutação de *BRCA1* encontrada.  
+```  
+chr17	43071103	.	TG	T	60.88   
+```  
+O VEP também funciona via submissão de jobs online e, portanto, aguarde até que a mensagem de **Done** apareça.   
 
 
 
 
-### PASSO 7: ANOTAÇÃO DOS VCFs  
-Neste passo, utilizamos o programa [Annovar](http://annovar.openbioinformatics.org/en/latest/) para adicionar informações genômicas, funcionais e populacionais às variantes identificadas.  
+
+
 
 Adicionaremos estas informações:  
 > **Genes e transcritos:** RefSeq ([NCBI RefSeqGenes](https://www.ncbi.nlm.nih.gov/refseq/rsg/about/))  
