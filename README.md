@@ -71,6 +71,12 @@ Confira também os arquivos gerados.
 ### PASSO 4: ANOTAÇÃO DOS VCFs  
 Neste passo, utilizamos a versão online do programa [Annovar](http://annovar.openbioinformatics.org/en/latest/) para adicionar informações genômicas, funcionais e populacionais às variantes identificadas. O [wANNOVAR](http://wannovar.wglab.org/) é uma ferramenta que incorporou as funcionalidades do software ANNOVAR (Perl script que rodamos via linha de comando), mas de fácil acesso e eficiente para anotar diferentes formatos de arquivos, inclusive VCFs.   
 
+Informações relevantes no contexto de mutações somáticas:  
+> **Genes e transcritos:** RefSeq ([NCBI RefSeqGenes](https://www.ncbi.nlm.nih.gov/refseq/rsg/about/))  
+> **Frequência populacional:** Exome Aggregation Consortium ([ExAC](http://exac.broadinstitute.org/))  
+> **Banco de mutações somáticas:** Catalogue of Somatic Mutations in Cancer ([COSMIC](https://cancer.sanger.ac.uk/cosmic)) 
+
+
 > 1. No Canvas, baixe os 4 arquivos VCFs filtrados (baixam na pasta de Downloads/ local) para upload no wANNOVAR.   
 > 2. No **wANNOVAR**, registre-se e prossiga com o passo-a-passo para anotar.   
 > 3. Confira as mensagens de email, o wANNOVAR enviará link para o resultado da análise.   
@@ -81,19 +87,10 @@ Trata-se de uma mutação no gene [*BRCA1*](https://www.ncbi.nlm.nih.gov/gene?cm
 
 Explore [UCSC Browser](http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr17%3A43044295%2D43125483&hgsid=777953357_4rOF7a8emnEulAF6PagHfdQXXeDn) para visuallizar o contexto genômico do gene (distribuição de exons/introns), a densidade de SNPs reportados no gene, etc.  
 
-Tente explorar também um outro anotador de variantes do genomic browser [Ensenbl](https://www.ensembl.org/index.html), a versão "web interface" do *Variant Effect Predictor* ([VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)). Clique **Launch VE!P** e insira por copy/paste as informações da mutação de *BRCA1* encontrada.  
+Tente explorar também um outro anotador de variantes do genomic browser [Ensembl](https://www.ensembl.org/index.html), a versão "web interface" do *Variant Effect Predictor* ([VEP](https://www.ensembl.org/info/docs/tools/vep/index.html)). Clique **Launch VE!P** e insira por copy/paste as informações da mutação de *BRCA1* encontrada.  
 ```  
 chr17	43071103	.	TG	T	60.88   
 ```  
 O VEP também funciona via submissão de jobs online e, portanto, aguarde até que a mensagem de **Done** apareça.   
 
 
-
-
-
-
-
-Adicionaremos estas informações:  
-> **Genes e transcritos:** RefSeq ([NCBI RefSeqGenes](https://www.ncbi.nlm.nih.gov/refseq/rsg/about/))  
-> **Frequência populacional:** Exome Aggregation Consortium ([ExAC](http://exac.broadinstitute.org/))  
-> **Banco de mutações somáticas:** Catalogue of Somatic Mutations in Cancer ([COSMIC](https://cancer.sanger.ac.uk/cosmic)) 
