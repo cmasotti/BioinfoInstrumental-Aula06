@@ -69,13 +69,14 @@ aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$ gatk --java-options "
 Confira também os arquivos gerados.   
 
 ### PASSO 4: ANOTAÇÃO DOS VCFs  
-Neste passo, utilizamos a versão online do programa [Annovar](http://annovar.openbioinformatics.org/en/latest/) para adicionar informações genômicas, funcionais e populacionais às variantes identificadas. O [wANNOVAR](http://wannovar.wglab.org/) é uma ferramenta que incorporou as funcionalidades do software ANNOVAR (Perl script que rodamos via linha de comando), mas de fácil acesso e eficiente para anotar diferentes formatos de arquivos, inclusive VCFs.   
+Neste passo, utilizamos a versão online do programa [Annovar](http://annovar.openbioinformatics.org/en/latest/) para adicionar informações genômicas, funcionais e populacionais às variantes identificadas.   
 
-Informações relevantes no contexto de mutações somáticas:  
+Informações relevantes no contexto de mutações somáticas geralmente anotadas:  
 > **Genes e transcritos:** RefSeq ([NCBI RefSeqGenes](https://www.ncbi.nlm.nih.gov/refseq/rsg/about/))  
 > **Frequência populacional:** Exome Aggregation Consortium ([ExAC](http://exac.broadinstitute.org/))  
 > **Banco de mutações somáticas:** Catalogue of Somatic Mutations in Cancer ([COSMIC](https://cancer.sanger.ac.uk/cosmic)) 
 
+O [wANNOVAR](http://wannovar.wglab.org/) é uma ferramenta que incorporou as funcionalidades do software ANNOVAR (Perl script que rodamos via linha de comando), mas de fácil acesso e eficiente para anotar diferentes formatos de arquivos, inclusive VCFs. Seguiremos a aula prática utilizando a ferramenta online, observe as instruções da aula.  
 
 > 1. No Canvas, baixe os 4 arquivos VCFs filtrados (baixam na pasta de Downloads/ local) para upload no wANNOVAR.   
 > 2. No **wANNOVAR**, registre-se e prossiga com o passo-a-passo para anotar.   
