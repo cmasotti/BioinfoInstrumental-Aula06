@@ -28,9 +28,8 @@ No prompt da linha de comando no servidor remoto, criar diretório ```refinement
 ```bash   
 aluno30@ea046e981f34:/mnt/curso/aluno30$ mkdir refinement   
 aluno30@ea046e981f34:/mnt/curso/aluno30$ cd refinement
-aluno30@ea046e981f34:/mnt/curso/aluno30/refinement$ mkdir filter  
-aluno30@ea046e981f34:/mnt/curso/aluno30/refinement$ mkdir annotation   
-aluno30@ea046e981f34:/mnt/curso/aluno30/refinement$ ls    #confira os diretórios criados   
+aluno30@ea046e981f34:/mnt/curso/aluno30/refinement$ mkdir filter    
+aluno30@ea046e981f34:/mnt/curso/aluno30/refinement$ ls    #confira o diretório criado   
 aluno30@ea046e981f34:/mnt/curso/aluno30/refinement$ cd filter   
 aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$ ln -s ../../calling/hardFilters/TCGA_HF_* .  
 aluno30@ea046e981f34:/mnt/curso/aluno30/refinement/filter$ ln -s /mnt/dados/aula4/hg38   #link simbólico para pasta com arquivos do hg38.   
